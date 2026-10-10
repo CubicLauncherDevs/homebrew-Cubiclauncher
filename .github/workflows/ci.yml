@@ -17,11 +17,8 @@ jobs:
     env:
       HOMEBREW_DEVELOPER: 1
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # Detects this repo is a tap (owner/homebrew-*), symlinks it into
-      # Homebrew's Taps directory and runs `brew trust` on it.
+      # Detects this repo is a tap (owner/homebrew-*), fetches the commit,
+      # symlinks it into Homebrew's Taps directory and runs `brew trust` on it.
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@main
         with:

@@ -5,8 +5,7 @@ cask "cubiclauncher" do
   sha256 arm:   "436d975f9804ed0af6eeef09ad79cf2625977e463f917b025a9d52a70f5d8996",
          intel: "50e0a4c302a5b96af1b6aeb7b0676dd6b37de7d1e75f15877000f12373aa4de3"
 
-  url "https://github.com/CubicLauncherDevs/CubicLauncher/releases/download/v#{version}/cubiclauncher_#{version}_#{arch}.dmg",
-      verified: "github.com/CubicLauncherDevs/CubicLauncher/"
+  url "https://github.com/CubicLauncherDevs/CubicLauncher/releases/download/v#{version}/cubiclauncher_#{version}_#{arch}.dmg"
   name "CubicLauncher"
   desc "Open-source launcher for Minecraft: Java Edition"
   homepage "https://cubiclauncher.org/"
