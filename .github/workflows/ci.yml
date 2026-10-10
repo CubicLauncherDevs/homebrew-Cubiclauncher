@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
   workflow_dispatch:
 
@@ -14,18 +14,18 @@ jobs:
   audit:
     name: brew audit
     runs-on: macos-14
+    env:
+      HOMEBREW_DEVELOPER: 1
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Detects this repo is a tap (owner/homebrew-*), symlinks it into
+      # Homebrew's Taps directory and runs `brew trust` on it.
       - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-
-      - name: Register this repository as a tap
-        run: |
-          tap_dir="$(brew --repository)/Library/Taps/cubiclauncherdevs/homebrew-cubiclauncher"
-          mkdir -p "$(dirname "$tap_dir")"
-          ln -sfn "$GITHUB_WORKSPACE" "$tap_dir"
+        uses: Homebrew/actions/setup-homebrew@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Style
         run: brew style --cask cubiclauncher

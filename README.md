@@ -1,64 +1,64 @@
-# Homebrew Tap for CubicLauncher
+# Homebrew Tap para CubicLauncher
 
-Official [Homebrew](https://brew.sh) tap for [CubicLauncher](https://cubiclauncher.org),
-the open-source launcher for Minecraft: Java Edition.
+Tap oficial de [Homebrew](https://brew.sh) para [CubicLauncher](https://cubiclauncher.org),
+el launcher de código abierto para Minecraft: Java Edition.
 
-## Install
+## Instalación
 
 ```sh
 brew install --cask CubicLauncherDevs/cubiclauncher/cubiclauncher
 ```
 
-Or tap first and then install:
+O primero añade el tap y luego instala:
 
 ```sh
 brew tap CubicLauncherDevs/cubiclauncher
 brew install --cask cubiclauncher
 ```
 
-Both Apple Silicon and Intel Macs are supported; Homebrew picks the correct
-`.dmg` automatically.
+Se admiten Macs con Apple Silicon e Intel; Homebrew elige automáticamente el
+`.dmg` correcto.
 
-## Upgrade
+## Actualización
 
 ```sh
 brew upgrade --cask cubiclauncher
 ```
 
-## Uninstall
+## Desinstalación
 
-Remove the application only (keeps your instances, settings and downloaded content):
+Elimina solo la aplicación (conserva tus instancias, ajustes y contenido descargado):
 
 ```sh
 brew uninstall --cask cubiclauncher
 ```
 
-Remove the application **and all its data** (instances, settings, themes, skins
-and shared content stored in `~/.cubic`, plus WebView caches):
+Elimina la aplicación **y todos sus datos** (instancias, ajustes, temas, skins y
+contenido compartido guardados en `~/.cubic`, además de las cachés del WebView):
 
 ```sh
 brew uninstall --zap --cask cubiclauncher
 ```
 
-## About
+## Acerca de
 
 | | |
 |---|---|
-| Version | 35.0.0 |
-| Vendor | CubicLauncherDevs |
+| Versión | 35.0.0 |
+| Proveedor | CubicLauncherDevs |
 | Bundle ID | `com.cubiclauncher.launcher` |
-| Homepage | https://cubiclauncher.org |
-| Source | https://github.com/CubicLauncherDevs/CubicLauncher |
+| Sitio web | https://cubiclauncher.org |
+| Código fuente | https://github.com/CubicLauncherDevs/CubicLauncher |
 
-## Maintenance
+## Mantenimiento
 
-The cask lives at [`Casks/cubiclauncher.rb`](Casks/cubiclauncher.rb). It is
-validated on every push and pull request by the workflow in
-[`.github/workflows/ci.yml`](.github/workflows/ci.yml), which runs
-`brew style`, `brew audit` and `brew livecheck` on macOS.
+El cask vive en [`Casks/cubiclauncher.rb`](Casks/cubiclauncher.rb). Se valida en
+cada push y pull request con el workflow de
+[`.github/workflows/ci.yml`](.github/workflows/ci.yml), que ejecuta
+`brew style`, `brew audit` y `brew livecheck` en macOS.
 
-To update it for a new release, bump `version` and refresh the two `sha256`
-values (arm and intel) from the new `.dmg` assets:
+Para actualizarlo a una nueva versión, cambia `version` y refresca los dos valores
+`sha256` (arm e intel) a partir de los nuevos assets `.dmg`:
 
 ```sh
 shasum -a 256 cubiclauncher_<version>_aarch64.dmg
