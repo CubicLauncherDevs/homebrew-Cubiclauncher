@@ -9,12 +9,14 @@ cask "cubiclauncher" do
       verified: "github.com/CubicLauncherDevs/CubicLauncher/"
   name "CubicLauncher"
   desc "Open-source launcher for Minecraft: Java Edition"
-  homepage "https://cubiclauncher.org"
+  homepage "https://cubiclauncher.org/"
 
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  depends_on :macos
 
   app "cubiclauncher.app"
 
